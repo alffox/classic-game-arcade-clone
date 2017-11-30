@@ -29,7 +29,10 @@ Enemy.prototype.render = function() {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
+var ladybug1 = new Enemy(50, 200, 0);
+var ladybug2 = new Enemy(50, 300, 0);
+var ladybug3 = new Enemy(55, 250, 0);
+var allEnemies = [ladybug1, ladybug2, ladybug3];
 
 
 // This listens for key presses and sends the keys to your
