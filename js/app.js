@@ -59,6 +59,16 @@ function generateRandomSpeed(min, max) {
     var ladybug3 = new Enemy(0, 230, generateRandomSpeed());
     var allEnemies = [ladybug1, ladybug2, ladybug3];
 
+// After the first 3 are loaded, it pushes new ladybugs having random Y position into the allEnemies array following a certain time interval
+function generateRandomYPos() {
+    return Math.floor((Math.random() * (230 - 65 + 1)) + 65);
+}
+
+    setInterval(function(){
+    var newladybug = new Enemy(0, generateRandomYPos(), generateRandomSpeed());
+    allEnemies.push(newladybug);
+}, 1000);
+
 var player = new Player(200, 380);
 
 // This listens for key presses and sends the keys to your
