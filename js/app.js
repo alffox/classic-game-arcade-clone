@@ -54,9 +54,9 @@ function generateRandomSpeed(min, max) {
 }
 
 // Adds a set of 3 ladybugs on upper , middle and lower Y coordinates. For UX reasons, I think it's important to have the first 3 bugs on those positions as it will give to  player the idea of all scenarios
-var ladybug1 = new Enemy(0, 65, generateRandomSpeed());
-var ladybug2 = new Enemy(0, 145, generateRandomSpeed());
-var ladybug3 = new Enemy(0, 230, generateRandomSpeed());
+var ladybug1 = new Enemy(-100, 65, generateRandomSpeed());
+var ladybug2 = new Enemy(-100, 145, generateRandomSpeed());
+var ladybug3 = new Enemy(-100, 230, generateRandomSpeed());
 var allEnemies = [ladybug1, ladybug2, ladybug3];
 
 // After the first 3 are loaded, it pushes new ladybugs having random Y position into the allEnemies array following a certain time interval
@@ -65,7 +65,7 @@ function generateRandomYPos() {
 }
 
 setInterval(function(){
-    var newladybug = new Enemy(0, generateRandomYPos(), generateRandomSpeed());
+    var newladybug = new Enemy(-100, generateRandomYPos(), generateRandomSpeed());
     allEnemies.push(newladybug);
 }, 1000);
 
