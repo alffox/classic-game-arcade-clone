@@ -60,21 +60,21 @@ Player.prototype.handleInput = function(arrow) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-function generateRandomSpeed(min, max) {
+// Adds ladybugs on upper, middle and lower rows of bricks
+var allEnemies = [];
+var enemiesYPos = [230,145,65];
+
+// Gives random speeds to ladybugs
+function generateRandomSpeed() {
     return Math.floor((Math.random() * (500 - 100 + 1)) + 100);
 }
 
-// Adds a set of 3 ladybugs on upper , middle and lower Y coordinates. For UX reasons, I think it's important to have the first 3 bugs on those positions as it will give to  player the idea of all scenarios
-var ladybug1 = new Enemy(-100, 65, generateRandomSpeed());
-var ladybug2 = new Enemy(-100, 145, generateRandomSpeed());
-var ladybug3 = new Enemy(-100, 230, generateRandomSpeed());
-var allEnemies = [ladybug1, ladybug2, ladybug3];
-
-// After the first 3 are loaded, it pushes new ladybugs having random Y position into the allEnemies array following a certain time interval
+// Places bugs on random rows of bricks among top, middle and bottom
 function generateRandomYPos() {
-    return Math.floor((Math.random() * (230 - 65 + 1)) + 65);
+    return enemiesYPos[Math.floor(Math.random() * enemiesYPos.length)];
 }
 
+// Populates the allEnemies array with new ladybugs having random Y position among the enemiesYPos array following a certain time interval
 setInterval(function(){
     var newladybug = new Enemy(-100, generateRandomYPos(), generateRandomSpeed());
     allEnemies.push(newladybug);
