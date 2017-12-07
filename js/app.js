@@ -34,7 +34,7 @@ var Player = function(x,y) {
     this.y = y;
 };
 
-Player.prototype.update = function(handleInput) {
+Player.prototype.update = function() {
 };
 
 Player.prototype.render = function() {
@@ -56,18 +56,6 @@ Player.prototype.handleInput = function(arrow) {
         this.x += 101;
         break;
     }
-    /*if (arrow === 'up') {
-        this.y -= 85.5;
-    }
-    else if (arrow === 'down') {
-        this.y += 85.5;
-    }
-    else if (arrow === 'left') {
-        this.x -= 101;
-    }
-    else if (arrow === 'right') {
-        this.x += 101;
-    }*/
 };
 
 // Now instantiate your objects.
