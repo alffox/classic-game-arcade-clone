@@ -28,10 +28,11 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-var Player = function(x,y) {
+var Player = function(x,y,speed) {
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
+    this.speed = speed;
 };
 
 Player.prototype.update = function(handleInput) {
@@ -41,8 +42,19 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Player.prototype.handleInput = function() {
-
+Player.prototype.handleInput = function(arrow) {
+    if (arrow === 'up') {
+        this.y += this.speed - 85.5;
+    }
+    else if (arrow === 'down') {
+        this.y += this.speed + 85.5;
+    }
+    else if (arrow === 'left') {
+        this.x += this.speed - 101;
+    }
+    else if (arrow === 'right') {
+        this.x += this.speed + 101;
+    }
 };
 
 // Now instantiate your objects.
@@ -69,7 +81,7 @@ setInterval(function(){
     allEnemies.push(newladybug);
 }, 1000);
 
-var player = new Player(200, 380);
+var player = new Player(200, 380, 0);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
