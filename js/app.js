@@ -18,12 +18,19 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.speed * dt;
+    enemyXPos = this.x;
+    return enemyXPos;
+    //console.log("Enemy xPos is " + enemyXPos, "Enemy yPos is " + enemyYPos);
 };
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+
+Enemy.prototype.checkCollisions = function() {
+
+}
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -56,6 +63,12 @@ Player.prototype.handleInput = function(arrow) {
         this.x += 101;
         break;
     }
+    var heroXPos = this.x;
+    var heroYPos = this.y;
+    if (heroXPos === enemyXPos) {
+        console.log("collision detected!");
+    }
+    //console.log("Hero xPos is " + heroXPos, "Hero yPos is " + heroYPos);
 };
 
 // Now instantiate your objects.
