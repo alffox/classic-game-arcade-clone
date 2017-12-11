@@ -18,6 +18,7 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.speed * dt;
+    this.checkCollisions(player);
 };
 
 // Draw the enemy on the screen, required method for game
@@ -25,9 +26,16 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Enemy.prototype.checkCollisions = function() {
-
-}
+// Algorithm from https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+Enemy.prototype.checkCollisions = function(player) {
+    if (player.x < this.x + 67 &&
+        player.x + 33 > this.x &&
+        player.y < this.y + 33 &&
+        33 + player.y > this.y) {
+        player.x = 200;
+        player.y = 380;
+    }
+};
 
 // Now write your own player class
 // This class requires an update(), render() and
