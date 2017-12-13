@@ -67,24 +67,26 @@ Player.prototype.handleInput = function(arrow) {
             this.x += 101;
             break;
     }
-    if (this.y < -132.4) { //off-canvas top
+
+    // Prevents player from going out of bounds. Conditionals below have this order: top-bottom-left-rigth
+    if (this.y < -132.4) {
         this.y = -47, 5;
     }
-    if (this.y > 465.4) { //off-canvas bottom
+    if (this.y > 465.4) {
         this.y = 380;
     }
-    if (this.x < -102.99) { //off-canvas left
+    if (this.x < -102.99) {
         this.x = -2;
     }
-    if (this.x > 502.99) { //off-canvas right
+    if (this.x > 502.99) {
         this.x = 402;
     }
-    if (this.y < -47.4) {
+    if (this.y < -47.4) { // The player reaches the water and wins the game, reset method is called
         this.reset();
     }
 };
 
-Player.prototype.reset = function() {
+Player.prototype.reset = function() { // Reset method shared among Player.prototype.handleInput and Enemy.prototype.checkCollisions
         this.x = 200;
         this.y = 380;
 };
@@ -93,7 +95,7 @@ Player.prototype.reset = function() {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-// Adds ladybugs on upper, middle and lower rows of bricks
+// Adds ladybugs on upper, middle and lower "corridors". In-between corridors are not used on purpose, in order to deliver an easily playable game
 var allEnemies = [];
 var enemiesYPos = [230,145,65];
 
@@ -102,12 +104,12 @@ function generateRandomSpeed() {
     return Math.floor((Math.random() * (500 - 100 + 1)) + 100);
 }
 
-// Places bugs on random rows of bricks among top, middle and bottom
+// Places bugs on random corridors among top, middle and bottom ones
 function generateRandomYPos() {
     return enemiesYPos[Math.floor(Math.random() * enemiesYPos.length)];
 }
 
-// Populates the allEnemies array with new ladybugs having random Y position among the enemiesYPos array following a certain time interval
+// Populates the allEnemies array with new ladybugs having random Y position among the enemiesYPos array, following a 1 second time interval
 setInterval(function(){
     var newladybug = new Enemy(-103, generateRandomYPos(), generateRandomSpeed());
     allEnemies.push(newladybug);
