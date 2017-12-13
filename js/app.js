@@ -39,14 +39,13 @@ Enemy.prototype.checkCollisions = function(player) {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-var Player = function(x,y) {
+var Player = function(x, y) {
     this.sprite = 'images/char-boy.png';
     this.x = x;
     this.y = y;
 };
 
-Player.prototype.update = function() {
-};
+Player.prototype.update = function() {};
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -87,8 +86,8 @@ Player.prototype.handleInput = function(arrow) {
 };
 
 Player.prototype.reset = function() { // Reset method shared among Player.prototype.handleInput and Enemy.prototype.checkCollisions
-        this.x = 200;
-        this.y = 380;
+    this.x = 200;
+    this.y = 380;
 };
 
 // Now instantiate your objects.
@@ -97,7 +96,7 @@ Player.prototype.reset = function() { // Reset method shared among Player.protot
 
 // Adds ladybugs on upper, middle and lower "corridors". In-between corridors are not used on purpose, in order to deliver an easily playable game
 var allEnemies = [];
-var enemiesYPos = [230,145,65];
+var enemiesYPos = [230, 145, 65];
 
 // Gives random speeds to ladybugs
 function generateRandomSpeed() {
@@ -110,7 +109,7 @@ function generateRandomYPos() {
 }
 
 // Populates the allEnemies array with new ladybugs having random Y position among the enemiesYPos array, following a 1 second time interval
-setInterval(function(){
+setInterval(function() {
     var newladybug = new Enemy(-103, generateRandomYPos(), generateRandomSpeed());
     allEnemies.push(newladybug);
 }, 1000);
