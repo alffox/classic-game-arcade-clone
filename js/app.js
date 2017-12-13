@@ -90,7 +90,7 @@ function generateRandomYPos() {
 
 // Populates the allEnemies array with new ladybugs having random Y position among the enemiesYPos array following a certain time interval
 setInterval(function(){
-    var newladybug = new Enemy(-100, generateRandomYPos(), generateRandomSpeed());
+    var newladybug = new Enemy(-103, generateRandomYPos(), generateRandomSpeed());
     allEnemies.push(newladybug);
 }, 1000);
 
