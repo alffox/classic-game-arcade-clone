@@ -68,17 +68,17 @@ Player.prototype.handleInput = function(arrow) {
             this.x += 101;
             break;
     }
-    if (this.y > 465.4) {
-        this.y = 380;
-    }
-    if (this.y < -132.4) {
+    if (this.y < -132.4) { //off-canvas top
         this.y = -47, 5;
     }
-    if (this.x > 502.99) {
-        this.x = 402;
+    if (this.y > 465.4) { //off-canvas bottom
+        this.y = 380;
     }
-    if (this.x < -102.99) {
+    if (this.x < -102.99) { //off-canvas left
         this.x = -2;
+    }
+    if (this.x > 502.99) { //off-canvas right
+        this.x = 402;
     }
 };
 
