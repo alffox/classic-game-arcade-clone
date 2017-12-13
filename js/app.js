@@ -80,10 +80,14 @@ Player.prototype.handleInput = function(arrow) {
     if (this.x > 502.99) { //off-canvas right
         this.x = 402;
     }
-    if (this.y < -47.4) { //water reached, player wins !
+    if (this.y < -47.4) {
+        this.reset();
+    }
+};
+
+Player.prototype.reset = function() {
         this.x = 200;
         this.y = 380;
-    }
 };
 
 // Now instantiate your objects.
