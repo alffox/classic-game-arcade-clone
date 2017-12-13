@@ -54,19 +54,31 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(arrow) {
-    switch(arrow) {
+    switch (arrow) {
         case 'up':
-        this.y -= 85.5;
-        break;
+            this.y -= 85.5;
+            break;
         case 'down':
-        this.y += 85.5;
-        break;
+            this.y += 85.5;
+            break;
         case 'left':
-        this.x -= 101;
-        break;
+            this.x -= 101;
+            break;
         case 'right':
-        this.x += 101;
-        break;
+            this.x += 101;
+            break;
+    }
+    if (this.y > 465.4) {
+        this.y = 380;
+    }
+    if (this.y < -132.4) {
+        this.y = -47, 5;
+    }
+    if (this.x > 502.99) {
+        this.x = 402;
+    }
+    if (this.x < -102.99) {
+        this.x = -2;
     }
 };
 
