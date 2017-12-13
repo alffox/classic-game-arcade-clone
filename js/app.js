@@ -32,8 +32,7 @@ Enemy.prototype.checkCollisions = function(player) {
         player.x + 33 > this.x &&
         player.y < this.y + 33 &&
         33 + player.y > this.y) {
-        player.x = 200;
-        player.y = 380;
+        player.reset();
     }
 };
 
