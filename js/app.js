@@ -39,7 +39,7 @@ Enemy.prototype.checkCollisions = function(player) {
         this.speed = 0;
         isGameOver = true;
         setInterval(function() {
-            window.location.reload(false);
+        document.location.reload();
         }, 700);
     }
 };
@@ -150,7 +150,7 @@ span.onclick = function() {
 }
 // Restarts game upon pressing button
 replay.onclick = function() {
-    window.location.reload(false);
+    document.location.reload();
 }
 
 // Closes modal on blur (when the user clicks anywhere outside of it)
