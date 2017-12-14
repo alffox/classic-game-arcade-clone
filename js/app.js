@@ -34,15 +34,9 @@ Enemy.prototype.checkCollisions = function(player) {
         player.x + 33 > this.x &&
         player.y < this.y + 33 &&
         33 + player.y > this.y) {
-        // A little bit of "error" style when collision happens
-        document.body.style.backgroundColor = '#f2dede';
-        this.speed = 0;
-        isGameOver = true;
-        function refresh() {
-            setTimeout(refresh, 700);}
+        player.x = 200;
+        player.y = 380;
     }
-    location.reload();
-
 };
 
 // Now write your own player class
@@ -61,22 +55,22 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(arrow) {
-    if(isGameOver != true) { // Only move player when the game is not over
-    switch (arrow) {
-        case 'up':
-            this.y -= 85.5;
-            break;
-        case 'down':
-            this.y += 85.5;
-            break;
-        case 'left':
-            this.x -= 101;
-            break;
-        case 'right':
-            this.x += 101;
-            break;
+    if (isGameOver != true) { // Only move player when the game is not over
+        switch (arrow) {
+            case 'up':
+                this.y -= 85.5;
+                break;
+            case 'down':
+                this.y += 85.5;
+                break;
+            case 'left':
+                this.x -= 101;
+                break;
+            case 'right':
+                this.x += 101;
+                break;
+        }
     }
-}
 
     // Prevents player from going out of bounds. Conditionals below have this order: top-bottom-left-rigth
     if (this.y < -132.4) {
