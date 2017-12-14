@@ -22,4 +22,4 @@ Ladybugs have random speeds and can only appear on random corridors in the gray 
 ## Technical specs
 The game uses JavaScript Object-Oriented Programming techniques. The logic to play it is coded in the file https://github.com/alffox/classic-game-arcade-clone/blob/master/js/app.js
 
-The folder https://github.com/alffox/classic-game-arcade-clone/tree/master/images contains images to add extra features to the game like other characters, stones, collectible items
+The folder https://github.com/alffox/classic-game-arcade-clone/tree/master/images contains images to add extra features to the game like other characters, stones, collectible items.
