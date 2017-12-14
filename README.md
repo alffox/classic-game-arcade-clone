@@ -1,8 +1,26 @@
-frontend-nanodegree-arcade-game
+#Arcade Game Clone
 ===============================
 
-See the app in action at: https://alffox.github.io/classic-game-arcade-clone
+## What is this ?
+This is a Frogger game clone, please see Wikipedia for more information about arcade games: https://en.wikipedia.org/wiki/Arcade_game
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+![A screenshot of the game](https://github.com/alffox/classic-game-arcade-clone/tree/master/images/frogger.png)
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## How load the game ?
+Simply open this page: https://alffox.github.io/classic-game-arcade-clone
+
+## How to play the game ?
+The purpose of the game is having the hero character reaching the water at the top of the playing area without being hit by ladybugs.
+
+Use the keyboard arrows to move **up**, **down**, **right** and **left**.
+
+Once the hero reaches the water, a pop-up will congratulate with you.
+
+If there is a collision with a ladybug, the hero's position will be reset to the starting point.
+
+Ladybugs have random speeds and can only appear on random corridors in the gray paved area.
+
+## Technical specs
+The game uses JavaScript Object-Oriented Programming techniques. The logic to play it is coded in the file https://github.com/alffox/classic-game-arcade-clone/blob/master/js/app.js
+
+The folder https://github.com/alffox/classic-game-arcade-clone/tree/master/images contains images to add extra features to the game like other characters, stones, collectible items
