@@ -38,9 +38,9 @@ Enemy.prototype.checkCollisions = function(player) {
         document.body.style.backgroundColor = '#f2dede';
         this.speed = 0;
         isGameOver = true;
-        setTimeout(function() {
-            location.reload(true);
-        }, 700);
+        function refresh() {
+            location.reload();
+        setTimeout(refresh, 700);}
     }
 };
 
@@ -150,7 +150,7 @@ span.onclick = function() {
 }
 // Restarts game upon pressing button
 replay.onclick = function() {
-    location.reload(true);
+    location.reload();
 }
 
 // Closes modal on blur (when the user clicks anywhere outside of it)
