@@ -4,7 +4,7 @@
 ## What is this ?
 This is a Frogger game clone, please see Wikipedia for more information about arcade games: https://en.wikipedia.org/wiki/Arcade_game
 
-![A screenshot of the game](https://github.com/alffox/classic-game-arcade-clone/tree/master/images/frogger.png)
+[![A screenshot of the game](./images/frogger.png)](https://github.com/alffox/classic-game-arcade-clone/)
 
 ## How load the game ?
 Simply open this page: https://alffox.github.io/classic-game-arcade-clone
