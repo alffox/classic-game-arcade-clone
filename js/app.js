@@ -39,9 +39,10 @@ Enemy.prototype.checkCollisions = function(player) {
         this.speed = 0;
         isGameOver = true;
         function refresh() {
-            location.reload();
-        setTimeout(refresh, 700);}
+            setTimeout(refresh, 700);}
     }
+    location.reload();
+
 };
 
 // Now write your own player class
