@@ -1,5 +1,4 @@
 # Arcade Game Clone
-===============================
 
 ## What is this ?
 This is a Frogger game clone, please see Wikipedia for more information about arcade games: https://en.wikipedia.org/wiki/Arcade_game
