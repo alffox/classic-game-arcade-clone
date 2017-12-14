@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Effective JavaScript: Frogger</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Geostar+Fill">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <!-- Modal inspired by https://www.w3schools.com/howto/howto_css_modals.asp -->
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">×</span>
+            <p class="congrats">♔ Congratulations, you won !</p>
+            <button type="button" class="play-again">Play Again ?</button>
+        </div>
+
+    </div>
+
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>

@@ -80,8 +80,8 @@ Player.prototype.handleInput = function(arrow) {
     if (this.x > 502.99) {
         this.x = 402;
     }
-    if (this.y < -47.4) { // The player reaches the water and wins the game, reset method is called
-        this.reset();
+    if (this.y < -47.4) { // The player reaches the water and wins the game, success function is called
+        triggerSuccess();
     }
 };
 
@@ -128,3 +128,28 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+// Success Modal
+const modal = document.getElementById('myModal');
+const span = document.getElementsByClassName('close')[0];
+const replay = document.getElementsByClassName('play-again')[0];
+
+// Opens the modal
+function triggerSuccess() {
+    modal.style.display = 'block';
+}
+// Closes the Modal
+span.onclick = function() {
+    modal.style.display = 'none';
+}
+// Restarts game upon pressing button
+replay.onclick = function() {
+    location.reload();
+}
+
+// Closes modal on blur (when the user clicks anywhere outside of it)
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
