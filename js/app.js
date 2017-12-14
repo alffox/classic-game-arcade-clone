@@ -38,7 +38,7 @@ Enemy.prototype.checkCollisions = function(player) {
         document.body.style.backgroundColor = '#f2dede';
         this.speed = 0;
         isGameOver = true;
-        setInterval(function() {
+        setTimeout(function() {
         document.location.reload();
         }, 700);
     }
