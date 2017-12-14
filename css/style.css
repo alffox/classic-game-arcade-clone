@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    font-family: "Geostar Fill", cursive;
+    font-family: 'Geostar Fill', cursive;
     font-size: 2em;
 }
 
@@ -9,8 +9,8 @@ body {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
+    left: 0px;
+    top: 0px;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
