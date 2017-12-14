@@ -1,3 +1,5 @@
+var isGameOver = false;
+
 // Enemies our player must avoid
 var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
@@ -34,6 +36,7 @@ Enemy.prototype.checkCollisions = function(player) {
         33 + player.y > this.y) {
         document.body.style.backgroundColor = "#f2dede";
         this.speed = 0;
+        isGameOver = true;
         setTimeout(function() {
             location.reload();
         }, 700);
@@ -56,6 +59,7 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(arrow) {
+    if(isGameOver != true) {
     switch (arrow) {
         case 'up':
             this.y -= 85.5;
@@ -70,6 +74,7 @@ Player.prototype.handleInput = function(arrow) {
             this.x += 101;
             break;
     }
+}
 
     // Prevents player from going out of bounds. Conditionals below have this order: top-bottom-left-rigth
     if (this.y < -132.4) {
@@ -85,6 +90,7 @@ Player.prototype.handleInput = function(arrow) {
         this.x = 402;
     }
     if (this.y < -47.4) { // The player reaches the water and wins the game, success function is called
+        isGameOver = true;
         triggerSuccess();
     }
 };
