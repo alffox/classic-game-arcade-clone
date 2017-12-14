@@ -89,11 +89,6 @@ Player.prototype.handleInput = function(arrow) {
     }
 };
 
-Player.prototype.reset = function() { // Reset method shared among Player.prototype.handleInput and Enemy.prototype.checkCollisions
-    this.x = 200;
-    this.y = 380;
-};
-
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
