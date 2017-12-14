@@ -1,4 +1,4 @@
-var isGameOver = false;
+var isGameOver = false; // Variable used to prevent player from moving after winning or hitting bugs
 
 // Enemies our player must avoid
 var Enemy = function(x, y, speed) {
@@ -34,11 +34,12 @@ Enemy.prototype.checkCollisions = function(player) {
         player.x + 33 > this.x &&
         player.y < this.y + 33 &&
         33 + player.y > this.y) {
-        document.body.style.backgroundColor = "#f2dede";
+        // A little bit of "error" style when collision happens
+        document.body.style.backgroundColor = '#f2dede';
         this.speed = 0;
         isGameOver = true;
-        setTimeout(function() {
-            location.reload();
+        setInterval(function() {
+            window.location.reload(false);
         }, 700);
     }
 };
@@ -59,7 +60,7 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(arrow) {
-    if(isGameOver != true) {
+    if(isGameOver != true) { // Only move player when the game is not over
     switch (arrow) {
         case 'up':
             this.y -= 85.5;
@@ -99,11 +100,11 @@ Player.prototype.handleInput = function(arrow) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-// Adds ladybugs on upper, middle and lower "corridors". In-between corridors are not used on purpose, in order to deliver an easily playable game
+// Adds ladybugs on upper, middle and lower "corridors". In-between corridors are not used on purpose, this helps to deliver an easily playable game
 var allEnemies = [];
 var enemiesYPos = [230, 145, 65];
 
-// Gives random speeds to ladybugs
+// Assigns random speeds to ladybugs
 function generateRandomSpeed() {
     return Math.floor((Math.random() * (500 - 100 + 1)) + 100);
 }
@@ -149,7 +150,7 @@ span.onclick = function() {
 }
 // Restarts game upon pressing button
 replay.onclick = function() {
-    location.reload();
+    window.location.reload(false);
 }
 
 // Closes modal on blur (when the user clicks anywhere outside of it)
