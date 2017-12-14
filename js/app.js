@@ -32,7 +32,11 @@ Enemy.prototype.checkCollisions = function(player) {
         player.x + 33 > this.x &&
         player.y < this.y + 33 &&
         33 + player.y > this.y) {
-        player.reset();
+        document.body.style.backgroundColor = "#f2dede";
+        this.speed = 0;
+        setTimeout(function() {
+            location.reload();
+        }, 700);
     }
 };
 
