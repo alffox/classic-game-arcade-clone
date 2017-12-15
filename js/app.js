@@ -58,10 +58,10 @@ Player.prototype.handleInput = function(arrow) {
     if (isGameOver != true) { // Only move player when the game is not over
         switch (arrow) {
             case 'up':
-                this.y -= 85.5;
+                this.y -= 83;
                 break;
             case 'down':
-                this.y += 85.5;
+                this.y += 83;
                 break;
             case 'left':
                 this.x -= 101;
@@ -73,10 +73,10 @@ Player.prototype.handleInput = function(arrow) {
     }
 
     // Prevents player from going out of bounds. Conditionals below have this order: top-bottom-left-rigth
-    if (this.y < -132.4) {
-        this.y = -47, 5;
+    if (this.y < -35) {
+        this.y = -35;
     }
-    if (this.y > 465.4) {
+    if (this.y > 380) {
         this.y = 380;
     }
     if (this.x < -102.99) {
@@ -85,7 +85,7 @@ Player.prototype.handleInput = function(arrow) {
     if (this.x > 502.99) {
         this.x = 402;
     }
-    if (this.y < -47.4) { // The player reaches the water and wins the game, success function is called
+    if (this.y < -34) { // The player reaches the water and wins the game, success function is called
         isGameOver = true;
         triggerSuccess();
     }
